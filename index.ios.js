@@ -4,8 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
-import EntriaTest from './app';
+import EntriaTest from './src';
 
 AppRegistry.registerComponent('EntriaTest', () => EntriaTest);
