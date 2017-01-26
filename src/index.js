@@ -5,12 +5,12 @@
  */
 
  import React, {Component} from 'react';
- import MyApp from './MyApp';
+ import UserListView from './components/UserListView';
 
  export default class EntriaTest extends Component {
    render() {
      return (
-       <MyApp />
+       <UserListView />
      );
    }
  }
