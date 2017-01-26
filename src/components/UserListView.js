@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   Text,
@@ -13,24 +13,28 @@ import {
 } from 'react-native';
 
 export default class UserListView extends Component {
-  constructor() {
-    super();
-    const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: dataSource.cloneWithRows(['Pikachu', 'Raichu']),
-    };
-  }
+    constructor() {
+        super();
+        const dataSource = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
+        this.state = {
+            dataSource: dataSource.cloneWithRows([
+              'Pikachu',
+              'Raichu'
+            ])
+        };
+    }
 
-  render() {
-    const { dataSource } = this.state
+    render() {
+        const {dataSource} = this.state
 
-    return (
-      <ListView
-        dataSource={dataSource}
-        renderRow={(rowData) => <Text>{rowData}</Text>}
-      />
-    );
-  }
+        return (
+          <ListView
+            dataSource={dataSource}
+            renderRow={(rowData) => <Text>{rowData}</Text>}/>
+          );
+    }
 }
 
 const styles = StyleSheet.create({});
