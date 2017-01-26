@@ -15,16 +15,18 @@ import {
 export default class UserListView extends Component {
   constructor() {
     super();
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['Pikachu', 'Raichu']),
+      dataSource: dataSource.cloneWithRows(['Pikachu', 'Raichu']),
     };
   }
 
   render() {
+    const { dataSource } = this.state
+
     return (
       <ListView
-        dataSource={this.state.dataSource}
+        dataSource={dataSource}
         renderRow={(rowData) => <Text>{rowData}</Text>}
       />
     );
