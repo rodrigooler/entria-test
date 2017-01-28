@@ -1,6 +1,6 @@
 //@flow
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Relay from 'react-relay';
 import UserList from './components/UserList';
 import RelayStore from './relay/RelayStore';
@@ -10,9 +10,9 @@ RelayStore.reset(
 );
 
 export default class EntriaTest extends Component {
-    render() {
-        return (
-          <UserList />
-        );
-    }
+  render() {
+    return (
+      <UserList/>
+    );
+  }
 }
