@@ -19,11 +19,10 @@ const dataSource = new ListView.DataSource({
 class UserList extends Component {
   renderRow = ({node}) => {
     return (
-      <TouchableHighlight
-        onPress={() => this.goToUserDetail(node)}
-        underlayColor="whitesmoke">
+      <TouchableHighlight>
         <View style={styles.view}>
-          <Text>{node.name}</Text>
+          <Text>ID: {node.id}</Text>
+          <Text>Name: {node.name}</Text>
         </View>
       </TouchableHighlight>
     );
@@ -58,9 +57,6 @@ export default createRenderer(UserList, {
     viewer: () => Relay.QL `
       fragment on Viewer {
         users(first: $count) {
-          pageInfo {
-            hasNextPage
-          }
           edges {
             node {
               id
